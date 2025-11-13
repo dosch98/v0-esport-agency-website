@@ -1,0 +1,260 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Refined IMPERA Imperial Dark Theme with exact color specs from brief */
+  --background: oklch(0.09 0 0); /* Deeper slate #0f0f0f */
+  --foreground: oklch(0.94 0.003 60); /* Pure Bone/Off-White */
+  --card: oklch(0.11 0 0); /* Slightly lighter for cards */
+  --card-foreground: oklch(0.94 0.003 60);
+  --popover: oklch(0.09 0 0);
+  --popover-foreground: oklch(0.94 0.003 60);
+  --primary: oklch(0.94 0.003 60); /* Bone */
+  --primary-foreground: oklch(0.09 0 0); /* Deep Slate */
+  --secondary: oklch(0.16 0 0); /* Refined gray */
+  --secondary-foreground: oklch(0.94 0.003 60);
+  --muted: oklch(0.16 0 0);
+  --muted-foreground: oklch(0.5 0.01 60); /* Stone-500 */
+  --accent: oklch(0.32 0.08 45); /* Imperial Amber/Gold - subtle and refined */
+  --accent-foreground: oklch(0.09 0 0);
+  --destructive: oklch(0.5 0.2 25);
+  --destructive-foreground: oklch(0.94 0.003 60);
+  --border: oklch(0.2 0.01 60); /* Very subtle borders */
+  --input: oklch(0.2 0.01 60);
+  --ring: oklch(0.32 0.08 45);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.25rem; /* Even more minimal rounded corners */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.09 0 0);
+  --foreground: oklch(0.94 0.003 60);
+  --card: oklch(0.11 0 0);
+  --card-foreground: oklch(0.94 0.003 60);
+  --popover: oklch(0.09 0 0);
+  --popover-foreground: oklch(0.94 0.003 60);
+  --primary: oklch(0.94 0.003 60);
+  --primary-foreground: oklch(0.09 0 0);
+  --secondary: oklch(0.16 0 0);
+  --secondary-foreground: oklch(0.94 0.003 60);
+  --muted: oklch(0.16 0 0);
+  --muted-foreground: oklch(0.5 0.01 60);
+  --accent: oklch(0.32 0.08 45);
+  --accent-foreground: oklch(0.09 0 0);
+  --destructive: oklch(0.4 0.18 25);
+  --destructive-foreground: oklch(0.94 0.003 60);
+  --border: oklch(0.2 0.01 60);
+  --input: oklch(0.2 0.01 60);
+  --ring: oklch(0.32 0.08 45);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  /* Refined font configuration with proper imperial serif */
+  --font-serif: "Playfair Display", "Georgia", "Times New Roman", serif;
+  --font-sans: "Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    /* Better font rendering for luxury feel */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Refined scrollbar for imperial dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: oklch(0.09 0 0);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.2 0.01 60);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.32 0.08 45);
+  }
+
+  /* Smooth scroll behavior for luxury UX */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Adding strategic tactical particles background animation */
+@layer components {
+  .strategic-particles {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(90deg, rgba(120, 113, 108, 0.03) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(120, 113, 108, 0.03) 1px, transparent 1px);
+    background-size: 120px 120px;
+    background-position: 0 0, 0 0;
+    animation: strategic-grid-drift 60s linear infinite;
+  }
+
+  .strategic-particles::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(circle at 20% 30%, rgba(161, 98, 7, 0.04) 0%, transparent 30%),
+      radial-gradient(circle at 80% 70%, rgba(161, 98, 7, 0.03) 0%, transparent 25%),
+      radial-gradient(circle at 40% 80%, rgba(120, 113, 108, 0.02) 0%, transparent 20%);
+    animation: strategic-glow-pulse 20s ease-in-out infinite alternate;
+  }
+
+  .strategic-particles::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 100px,
+        rgba(161, 98, 7, 0.015) 100px,
+        rgba(161, 98, 7, 0.015) 101px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 100px,
+        rgba(120, 113, 108, 0.02) 100px,
+        rgba(120, 113, 108, 0.02) 101px
+      );
+    animation: strategic-lines-shift 40s linear infinite reverse;
+  }
+
+  /* Adding imperial particle float animation for Roman numerals, crowns, and tactical markers */
+  .imperial-particle {
+    animation: imperial-particle linear infinite;
+    will-change: transform, opacity;
+  }
+}
+
+/* Keyframe animations for strategic background elements */
+@keyframes strategic-grid-drift {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 120px 120px, 120px 120px;
+  }
+}
+
+@keyframes strategic-glow-pulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+@keyframes strategic-lines-shift {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(100px) translateY(100px);
+  }
+}
+
+/* Adding imperial particle float animation for Roman numerals, crowns, and tactical markers */
+@keyframes imperial-particle {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.08;
+  }
+  90% {
+    opacity: 0.15;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(30px) rotate(180deg);
+    opacity: 0;
+  }
+}
