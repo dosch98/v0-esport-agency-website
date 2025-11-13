@@ -31,7 +31,7 @@ const ImperialParticles = () => {
       content: romanNumerals[Math.floor(Math.random() * romanNumerals.length)],
       duration: 25 + Math.random() * 20,
       delay: Math.random() * 15,
-      size: 0.6 + Math.random() * 0.6,
+      size: 0.8 + Math.random() * 0.8,
     }))
 
     setParticles(newParticles)
@@ -48,12 +48,12 @@ const ImperialParticles = () => {
             top: `${particle.y}%`,
             animationDuration: `${particle.duration}s`,
             animationDelay: `${particle.delay}s`,
-            opacity: 0.15,
+            opacity: 0.25,
           }}
         >
           {particle.type === "roman" && (
             <span
-              className="font-serif text-amber-700/40 tracking-[0.3em]"
+              className="font-serif text-amber-700/60 tracking-[0.3em]"
               style={{ fontSize: `${particle.size * 1.2}rem` }}
             >
               {particle.content}
@@ -61,7 +61,7 @@ const ImperialParticles = () => {
           )}
           {particle.type === "crown" && (
             <Crown
-              className="text-amber-700/30"
+              className="text-amber-700/50"
               strokeWidth={1}
               style={{ width: `${particle.size * 16}px`, height: `${particle.size * 16}px` }}
             />
@@ -71,14 +71,14 @@ const ImperialParticles = () => {
               width={particle.size * 12}
               height={particle.size * 12}
               viewBox="0 0 12 12"
-              className="text-amber-700/30"
+              className="text-amber-700/50"
             >
               <path d="M6 0 L12 6 L6 12 L0 6 Z" fill="none" stroke="currentColor" strokeWidth="0.5" />
             </svg>
           )}
           {particle.type === "dot" && (
             <div
-              className="rounded-full border border-amber-700/30"
+              className="rounded-full border border-amber-700/50"
               style={{ width: `${particle.size * 6}px`, height: `${particle.size * 6}px` }}
             />
           )}
